@@ -1,0 +1,22 @@
+# directory me kahi bhi eg1.c file hogi to wo ignore kar dega
+eg1.c
+
+
+# directory me kahi bhi 
+xyz/abc/eg12.c
+
+
+# directory me kahi bhi xyz/abc/ name ke folder ki sari files ignore kar dega
+xyz/abc/
+
+
+# directory me kahi bhi log/ wale folder ki files ko ignore kar dega
+
+log/
+
+
+
+# Specific folder /my/ command se uski sari files ko ignore kar sakte hai 
+# isse my folder root path wale ki files hi ignore karega
+
+/my/
