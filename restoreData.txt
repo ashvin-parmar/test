@@ -8,3 +8,6 @@ There are a case in which commit is goes into stash area by chance, I have put d
 Here we are starting video...
 
 HERE WE DONE SOME CHANGES....
+
+
+By Mistake we are put our data to unstaged area by using git rm --staged
