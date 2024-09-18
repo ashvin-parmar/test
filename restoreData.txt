@@ -11,3 +11,9 @@ HERE WE DONE SOME CHANGES....
 
 
 By Mistake we are put our data to unstaged area by using git rm --staged
+
+No Changes are shown here, and show that all staged area content are comes here in new commit
+
+PROBLEM: There are some of data that are stored in previous commits are not show here.
+
+Here we are solving this problem...
