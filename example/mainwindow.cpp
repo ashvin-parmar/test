@@ -1,6 +1,9 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include<QMessageBox>
+#include<QFile>
+#include<QTextStream>
+QString MainWindow::FILE_NAME="student.dat";
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -51,6 +54,17 @@ void MainWindow::on_saveButton_clicked()
     }
     QString city=this->ui->cityBox->currentText();
     //Code to save data in file using QFile and QTextStream class
+    QFile file(FILE_NAME);
+
+    file.open(QIODevice::WriteOnly | QIODevice::Text);
+    QTextStream w(&file);
+    w<<firstName.trimmed()<<",";
+    w<<lastName.trimmed()<<",";
+    w<<address<<",";
+    w<<gender<<",";
+    w<<adult<<",";
+    w<<city<<"\n";
+    file.close();
 
     //Here all code to clear data from UI
     this->on_cancelButton_clicked();
@@ -60,5 +74,4 @@ void MainWindow::on_saveButton_clicked()
     mb.setWindowTitle("Notification");
     mb.show();
     mb.exec();
-
 }

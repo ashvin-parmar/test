@@ -21,6 +21,7 @@ private slots:
     void on_saveButton_clicked();
 
 private:
+    static QString FILE_NAME;
     Ui::MainWindow *ui;
 };
 #endif // MAINWINDOW_H
