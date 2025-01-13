@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<html>
+    
+    <head>
+        <title>Results Admin page</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    
+    <body>
+        <style type="text/css">
+    input#login,input#id,input#pass
+    {
+        width: 150px;
+        height: 30px;
+        font-size: 20px;
+    }
+    td#id,td#pass{
+        font-size: 25px;
+    }
+    
+</style>
+        <h1 align="center">Please Login Here</h1><br>
+        <form action="AdminLogin" method="post">
+            
+            <table border="2" align="center" width="" cellpadding = "10">
+                <tr><td id="id">Enter your Id</td><td><input type="text" name="id" id="id" required="required" /></td></tr>
+                <tr><td id="pass">Enter password</td><td><input type="password" id="pass" name="password" required="required"/></td></tr>
+                <tr><td></td><td><input type="submit" id="login" value="Login"/></td></tr>
+            </table>
+        </form>
+        <div><font size="6">   
+        
+            <a href="index.html">Go to home page</a><br>
+        </font></div>
+    </body>
+</html>
+
+
