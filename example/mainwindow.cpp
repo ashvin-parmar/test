@@ -2,8 +2,8 @@
 #include "ui_mainwindow.h"
 #include<QMessageBox>
 #include<QFile>
-#include<QTextStream>
-QString MainWindow::FILE_NAME="student.dat";
+// #include<QTextStream>
+// QString MainWindow::FILE_NAME="student.dat";
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
