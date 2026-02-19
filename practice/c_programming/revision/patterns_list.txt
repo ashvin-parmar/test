@@ -1,0 +1,6 @@
+### Patterns 
+pattern1:  Addition perform with incrementing fashion from 1 [eg5.c]
+pattern2: Multiplication perform with increment fashion  -> Factorial Series [eg6.c]
+pattern3: Fibonacci pattern [eg7.c] 
+pattern4: Random pattern [+1,-2,+3,-4,+5,-6]
+
