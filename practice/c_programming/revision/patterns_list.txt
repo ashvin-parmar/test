@@ -8,3 +8,6 @@ eg9.c -> Finding prime number from a range.
 eg10.c -> digit count in integer
 eg11.c -> travers on integer from backward
 eg12.c -> traversal on interger from forward direction
+eg13.c -> Find power of base^exp
+eg14.c -> Find armstrong number in a range
+

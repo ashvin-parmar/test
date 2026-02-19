@@ -15,14 +15,14 @@ printf("Enter a ending point[MAX=100]: ");
 scanf("%d",&ei);
 while((m=getchar())!=EOF && m!='\n');
 
+if(si<0)
+{
+si=1;
+}
 if(si>ei)
 {
 printf("Invalid starting and ending point\n");
 return 0;
-}
-if(si<0)
-{
-si=1;
 }
 if(ei>100) ei=100;
 printf("Prime number from %d to %d are....\n",si,ei);
