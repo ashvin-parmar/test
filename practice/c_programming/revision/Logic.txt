@@ -15,6 +15,6 @@ eg25.c --> Find largest even number
 eg26.c --> Swapping logic	[Using two variable, Using three variable]
 
 ## Searching algorithm
-eg27.c ---> O(n) searching for a number in an array
-eg28.c ---> Find frequency of each number in an array [in once -> Most optimizing way] 
+eg27.c ---> O(n) searching for a number in an *array*
+eg28.c ---> Find frequency of each number in an *array* [in once -> Most optimizing way] 
 
