@@ -4,13 +4,6 @@ pattern2: Multiplication perform with increment fashion  -> Factorial Series [eg
 pattern3: Fibonacci pattern [eg7.c] 
 pattern4: Random pattern [+1,-2,+3,-4,+5,-6] [eg8.c]
 
-//Not Pattern
-eg9.c -> Finding prime number from a range.
-eg10.c -> digit count in integer
-eg11.c -> travers on integer from backward
-eg12.c -> traversal on interger from forward direction
-eg13.c -> Find power of base^exp
-eg14.c -> Find armstrong number in a range
 
 //Patterns Again
 eg15.c -> Linear sort, Selection sort pattern

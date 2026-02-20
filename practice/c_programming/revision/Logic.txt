@@ -1,0 +1,18 @@
+### Logic
+
+eg9.c -> Finding prime number from a range.
+eg10.c -> digit count in integer
+eg11.c -> travers on integer from backward
+eg12.c -> traversal on interger from forward direction
+eg13.c -> Find power of base^exp
+eg14.c -> Find armstrong number in a range
+
+
+eg22.c --> Largest element in the array
+eg23.c --> Second largest element in the array
+eg24.c --> Reverse an array
+eg25.c --> Find largest even number
+
+
+## Searching algorithm
+eg26.c ---> 
