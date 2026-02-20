@@ -1,0 +1,4 @@
+### Topics
+
+Array
+eg21.c --> malloc, free [dynamic programming, memory management, pointer]

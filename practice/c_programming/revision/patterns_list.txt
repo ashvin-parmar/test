@@ -17,3 +17,7 @@ eg15.c -> Linear sort, Selection sort pattern
 eg16.c -> Bubble Sort
 eg17.c -> Some pattern
 eg18.c -> forward-backward comparison
+eg19.c -> simple pattern (1-5)
+eg20.c -> stars pyramid 
+
+
