@@ -3,3 +3,6 @@
 1: Linear Sort
 2: Bubble Sort
 3: Selection Sort
+4: Insertion Sort
+5: 
+

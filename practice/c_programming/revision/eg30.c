@@ -1,11 +1,15 @@
+//Min-Heap
+
 #include<stdio.h>
 #include<stdlib.h>
 int main()
 {
 	int size;
 	int *x;
-	int i,j,k;
-	int flag; 
+	int i,j;
+	int flag;
+	int ci,ri;
+	int lb,ub;
 	char m;
 	//Arguments asking: ==>
 	printf("Enter size: ");
@@ -26,21 +30,38 @@ int main()
 	printf("Elements before sorting ->\n");
 	for(i=0;i<size;i++) printf("%d%s ",x[i],(i+1!=size)?",":"\n");
 
-	//Main Sorting algorithm
-	for(k=size-2;k>=0;k--)
+	lb=0;		//LowerBound	[Used to set the range of sorting.]
+	ub=size-1;	//UpperBound
+
+	/*	FORMULA's Used In Heap Sort Algorithm
+		ri=0;		//root index
+		ci=(ri*2)+1;	//child index
+		or 
+		ri=(ci-1)/2;	//floor part
+		ci=ub;
+	 */
+
+	//Create Max-Heap 	[applied on from last index for first(reverse)]
+	for(j=lb+1;j<=ub;j++)
 	{
-		for(i=0,j=1;i<=k;i++,j++)
+		ci=j;
+		while(ci>lb)
 		{
-			//printf("%d, %d\n",i,j);
-			if(x[i]>x[j])
+			ri=(ci-1)/2;
+			if(x[ci]>x[ri])
 			{
-				flag=x[i];
-				x[i]=x[j];
-				x[j]=flag;
+				flag=x[ci];
+				x[ci]=x[ri];
+				x[ri]=flag;
+				ci=ri;
+			}
+			else
+			{
+				break;
 			}
 		}
 	}
-	printf("Elements after sorting ->\n");
+	printf("Elements after max-heap ->\n");
 	for(i=0;i<size;i++) printf("%d%s ",x[i],(i+1!=size)?",":"\n");
 
 

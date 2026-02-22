@@ -4,8 +4,10 @@ int main()
 {
 	int size;
 	int *x;
-	int i,j,k;
-	int flag; 
+	int i,j;
+	int lb,ub;
+	int ci,ri,lci,rci,swi;
+	int flag;
 	char m;
 	//Arguments asking: ==>
 	printf("Enter size: ");
@@ -26,25 +28,65 @@ int main()
 	printf("Elements before sorting ->\n");
 	for(i=0;i<size;i++) printf("%d%s ",x[i],(i+1!=size)?",":"\n");
 
-	//Main Sorting algorithm
-	for(k=size-2;k>=0;k--)
+	//Main Sorting Algorithm
+	lb=0;		//LowerBound
+	ub=size-1;	//UpperBound
+
+	j=lb+1;
+	while(j<=ub)
 	{
-		for(i=0,j=1;i<=k;i++,j++)
+		ci=j;
+		while(ci>lb)
 		{
-			//printf("%d, %d\n",i,j);
-			if(x[i]>x[j])
+			ri=(ci-1)/2;
+			if(x[ri]<x[ci])
 			{
-				flag=x[i];
-				x[i]=x[j];
-				x[j]=flag;
+				flag=x[ri];
+				x[ri]=x[ci];
+				x[ci]=flag;
+				ci=ri;
+			}
+			else
+			{
+				break;
+			}
+		}
+		j++;
+	}
+	j=ub;
+	while(j>lb)
+	{
+		flag=x[j];
+		x[j]=x[lb];
+		x[lb]=flag;
+		j--;
+		ri=lb;
+		while(ri<j)
+		{
+			ci=(ri*2)+1;
+			lci=ci;
+			rci=ci+1;
+			if(lci>j) break;
+			if(rci>j) swi=lci;
+			else if(x[lci]>x[rci]) swi=lci;
+			else swi=rci;
+			if(x[swi]>x[ri])
+			{
+				flag=x[swi];
+				x[swi]=x[ri];
+				x[ri]=flag;
+				ri=swi;
+			}
+			else
+			{
+				break;
 			}
 		}
 	}
+
 	printf("Elements after sorting ->\n");
 	for(i=0;i<size;i++) printf("%d%s ",x[i],(i+1!=size)?",":"\n");
-
 
 	free(x);
 	return 0;
 }
-

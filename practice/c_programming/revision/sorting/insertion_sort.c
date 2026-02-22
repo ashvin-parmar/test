@@ -4,8 +4,9 @@ int main()
 {
 	int size;
 	int *x;
-	int i,j,k;
-	int flag; 
+	int i,j;
+	int lb,ub;
+	int num;
 	char m;
 	//Arguments asking: ==>
 	printf("Enter size: ");
@@ -26,25 +27,27 @@ int main()
 	printf("Elements before sorting ->\n");
 	for(i=0;i<size;i++) printf("%d%s ",x[i],(i+1!=size)?",":"\n");
 
-	//Main Sorting algorithm
-	for(k=size-2;k>=0;k--)
+	//Main Sorting Algorithm
+	lb=0;		//LowerBound
+	ub=size-1;	//UpperBound
+
+	j=lb+1;
+	while(j<=ub)
 	{
-		for(i=0,j=1;i<=k;i++,j++)
+		num=x[j];
+		i=j-1;
+		while(i>=lb && x[i]>num)
 		{
-			//printf("%d, %d\n",i,j);
-			if(x[i]>x[j])
-			{
-				flag=x[i];
-				x[i]=x[j];
-				x[j]=flag;
-			}
+			x[i+1]=x[i];
+			i--;
 		}
+		x[i+1]=num;
+		j++;
 	}
+
 	printf("Elements after sorting ->\n");
 	for(i=0;i<size;i++) printf("%d%s ",x[i],(i+1!=size)?",":"\n");
-
 
 	free(x);
 	return 0;
 }
-
