@@ -9,3 +9,4 @@ C-Programming
 
 C++ Programming
 6: Radix Sort	[Positive number radix sort]
+7: Quick Sort 
