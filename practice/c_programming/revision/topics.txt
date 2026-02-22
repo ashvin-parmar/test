@@ -6,5 +6,5 @@ eg21.c --> malloc, free [dynamic programming, memory management, pointer]
 eg29.c --> Min Heap creation Logic discussed
 eg30.c --> Max Heap [Same as min heap]
 
-eg31.c --> Stack
-eg32.c --> Queue
+eg31.c --> Stack: First In Last Out [FILO]/[LIFO]
+eg32.c --> Queue: First in First Out [FIFO]/[LILO]
