@@ -12,3 +12,4 @@ C++ Programming
 7: Radix Sort	[Positive number radix sort]
 8: Quick Sort 
 9: Merge Sort
+10: Counting Sort
