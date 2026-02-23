@@ -5,8 +5,10 @@ C-Programming
 2: Bubble Sort
 3: Selection Sort
 4: Insertion Sort
-5: Max/Min Heap Sort
+5: Shell Sort [modified version of Insertion sort].
+6: Max/Min Heap Sort
 
 C++ Programming
-6: Radix Sort	[Positive number radix sort]
-7: Quick Sort 
+7: Radix Sort	[Positive number radix sort]
+8: Quick Sort 
+9: Merge Sort
