@@ -11,5 +11,9 @@ C-Programming
 C++ Programming
 7: Radix Sort	[Positive number radix sort]
 8: Quick Sort 
+    8-1: Quick Sort with recursion      
 9: Merge Sort
+    9-1: Merge Sort with recursion
 10: Counting Sort
+
+
