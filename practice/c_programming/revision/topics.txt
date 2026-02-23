@@ -8,3 +8,5 @@ eg30.c --> Max Heap [Same as min heap]
 
 eg31.c --> Stack: First In Last Out [FILO]/[LIFO]
 eg32.c --> Queue: First in First Out [FIFO]/[LILO]
+
+eg36.c --> Recursion : Last recursive call executes first then next in reverse order from last to first -> final output. [example: factorial]
