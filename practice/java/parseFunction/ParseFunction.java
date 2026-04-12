@@ -7,11 +7,11 @@ class Student implements java.io.Serializable
 }
 class ParseFunction
 {
-  public Object parseTo(Class parameterType,String parameterValue)
+  public <T> T parseTo(Class<T> parameterType,String parameterValue)
   {
     return parseTo(parameterType,parameterValue,null);
   }
-  public Object parseTo(Class parameterType,String parameterValue,String convertFrom)
+  public <T> T parseTo(Class<T> parameterType,String parameterValue,String convertFrom)
   {
     Object result;
     if(parameterType==null) return null;
@@ -94,7 +94,7 @@ class ParseFunction
     }
     if(result==null)
     {
-      if(convertFrom.equals("json"))
+      if(convertFrom.equalsIgnoreCase("json"))
       {
         Gson gson=new Gson();
         try
@@ -106,29 +106,43 @@ class ParseFunction
         }
       }
     }
-    return result;
+    if(parameterType.isPrimitive()) return (T)result;
+    else return parameterType.cast(result);
   }
   public static void main(String args[])
   {
     ParseFunction p=new ParseFunction();
 
     System.out.println("--------main testing---------");
-    System.out.println("Testing on long: "+(long)p.parseTo(long.class,"242523435246342"));
+    long longVal=p.parseTo(long.class,"234425243235");
+    Integer intVal=p.parseTo(Integer.class,"132423");
+    Short shortVal=p.parseTo(Short.class,"123");
+    short shortVal1=p.parseTo(short.class,"2432");
+    byte byteVal=p.parseTo(byte.class,"23");
+    Double doubleVal=p.parseTo(Double.class,"1234213523.5234324");
+    float floatVal=p.parseTo(float.class,"63.53");
+    char charVal=p.parseTo(char.class,"Z");
+    boolean booleanVal=p.parseTo(boolean.class,"true");
+    String stringVal=p.parseTo(String.class,"Something");
+    Student student=p.parseTo(Student.class,"{'name':'Ashvin','rollNumber':'1001'}","json");
+    System.out.println("Testing on long: "+longVal);
+    System.out.println("Testing on int: "+intVal);
+    System.out.println("Testing on short:"+shortVal); 
+    System.out.println("Testing on short1: "+shortVal1);
+    System.out.println("Testing on byte: "+byteVal);
+    System.out.println("Testing on double: "+doubleVal);
+    System.out.println("Testing on float: "+floatVal); 
+    System.out.println("Testing on char: "+charVal);
+    System.out.println("Testing on boolean: "+booleanVal);
+    System.out.println("Testing on string: "+stringVal);
+    System.out.println("Testing on complex object [name]: "+student.name);
 
-    System.out.println("Testing on int: "+(int)p.parseTo(Integer.class,"12312"));
-    System.out.println("Testing on short: "+(short)p.parseTo(short.class,"534"));
-    System.out.println("Testing on byte: "+(Byte)p.parseTo(Byte.class,"100"));
-    System.out.println("Testing on double: "+(Double)p.parseTo(double.class,"2425342.5234234"));
-    System.out.println("Testing on float: "+(Float)p.parseTo(float.class,"423.2332"));
-    System.out.println("Testing on char: "+(Character)p.parseTo(char.class,"A"));
-    System.out.println("Testing on boolean: "+(boolean)p.parseTo(boolean.class,"true"));
-    System.out.println("Testing on string: "+(String)p.parseTo(String.class,"There are some information"));
-    System.out.println("Testing on complex object: "+((Student)p.parseTo(Student.class,"{\"name\":\"Ashvin\",\"rollNumber\":\"1001\"}","json")).name);
 
     System.out.println("-------Corner cases ---------");
-    System.out.println("Passing null testing: "+(int)p.parseTo(Integer.class,"null"));    //Invalid data passed, then default value of integer is set.
-    System.out.println("Passing empty string: "+(double)p.parseTo(double.class,""));
-    //System.out.println("Passing null to parameterType: "+(int)p.parseTo(null,null));      //This line to show that its framework user mistake, not the framework developer mistake. Return type is Object, cannot take in primitive if you are not sure about its primitive returning value. 
-    System.out.println("Passing null to parameterType: "+(Integer)p.parseTo(null,null));
+    System.out.println("Passing null testing: "+p.parseTo(Integer.class,"null"));    //Invalid data passed, then default value of integer is set.
+    System.out.println("Passing empty string: "+p.parseTo(double.class,""));
+    //System.out.println("Passing null to parameterType: "+p.parseTo(null,null));      //This line to show that its framework user mistake, not the framework developer mistake. Return type is Object, cannot take in primitive if you are not sure about its primitive returning value. 
+    System.out.println("Passing null to parameterType: "+p.parseTo(null,null));
   }
 }
+

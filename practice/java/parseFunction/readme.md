@@ -5,10 +5,9 @@ There are parsing depedencies required for JSON format. For this, i have used Gs
 Required package to import is ->
 ** import com.google.gson.*; **
 
-### Required before use
-There are some things that required for you to know to use this parser. 
-1. You have to type cast the return value from the parseTo function, to the specifically required type. If it's primitive type then use their wrapper classes(Boxer class) to type cast to them. ** Reason: It return Object type of data, which need to convert them to your required once. ** 
-
+### Feature
+1: We have used Generics in java, provides a facility that allows types (classes and interfaces) to be parameters when defining other classes, interfaces, and methods. Introduced in Java 5, they provide a way to reuse the same code with different inputs while maintaining type safety.
+**[NOT USED ANYMORE]** You have to type cast the return value from the parseTo function, to the specifically required type. If it's primitive type then use their wrapper classes(Boxer class) to type cast to them. ** Reason: It return Object type of data, which need to convert them to your required once. ** 
 
 ### Why i have build this? 
 I have been working on building a framework, where i used to implement some feature by using reflection API to invoke method. In Reflection, invoke method required array of Object as parameter of those function. This parseTo method will help me to implement that feature to it. 
